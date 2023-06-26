@@ -52,3 +52,24 @@ a {
 .navBar img {
 	height: 5vh;
 }
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+}
+
+.githubFooter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.githubFooter img {
+	height: 50px;
+	width: 50px;
+	margin: 5px;
+}
