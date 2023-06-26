@@ -18,3 +18,10 @@
 	font-size: 25px;
 	margin-bottom: 50px;
 }
+
+.product-images {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
