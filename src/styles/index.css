@@ -8,6 +8,20 @@ body {
 	background-color: rgb(251, 250, 251);
 }
 
+.main-nav {
+	display: flex;
+	flex-direction: column;
+}
+
+.products {
+	display: flex;
+	gap: 10px;
+}
+
+.productText:hover {
+	background-color: yellow;
+}
+
 .navBar {
 	position: sticky;
 	display: flex;
@@ -18,7 +32,8 @@ body {
 	height: 10vh;
 }
 
-.navText {
+.navText,
+.productText {
 	background-image: linear-gradient(
 		to bottom,
 		rgba(154, 154, 154, 0.5),
@@ -45,7 +60,7 @@ a {
 .navLinks {
 	display: flex;
 	gap: 10vw;
-	margin-left: 150px;
+	margin-left: 50px;
 	background-color: none;
 }
 
