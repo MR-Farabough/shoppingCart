@@ -9,6 +9,8 @@ body {
 }
 
 .main-nav {
+	position: sticky;
+	top: 0;
 	display: flex;
 	flex-direction: column;
 }
@@ -23,7 +25,6 @@ body {
 }
 
 .navBar {
-	position: sticky;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
