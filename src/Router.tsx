@@ -8,7 +8,6 @@ import shoppingCart from './assets/shoppingBag.svg';
 import githubLogo from './assets/githubLogo.png';
 import Mac from './components/Mac';
 import Iphone from './components/Iphone';
-import Ipad from './components/Ipad';
 import AppleWatch from './components/AppleWatch';
 
 const Router = () => {
@@ -33,9 +32,6 @@ const Router = () => {
 							<Link to={'/iphone'}>
 								<p className="productText">Iphone</p>
 							</Link>
-							<Link to={'/ipad'}>
-								<p className="productText">Ipad</p>
-							</Link>
 							<Link to={'/watch'}>
 								<p className="productText">Watch</p>
 							</Link>
@@ -55,7 +51,6 @@ const Router = () => {
 				<Route path="/shop" Component={Shop} />
 				<Route path="/mac" Component={Mac} />
 				<Route path="/iphone" Component={Iphone} />
-				<Route path="/ipad" Component={Ipad} />
 				<Route path="/watch" Component={AppleWatch} />
 				<Route path="/checkout" Component={Checkout} />
 				<Route path="*" Component={NotFound} />
