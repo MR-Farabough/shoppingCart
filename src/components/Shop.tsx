@@ -1,5 +1,17 @@
+import AppleWatch from './AppleWatch';
+import Ipad from './Ipad';
+import Iphone from './Iphone';
+import Mac from './Mac';
+
 const Shop = () => {
-	return <h3>Shop</h3>;
+	return (
+		<>
+			<AppleWatch />
+			<Ipad />
+			<Iphone />
+			<Mac />
+		</>
+	);
 };
 
 export default Shop;
