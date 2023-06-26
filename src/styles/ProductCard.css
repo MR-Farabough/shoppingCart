@@ -1,0 +1,29 @@
+.card {
+	height: 600px;
+	width: 300px;
+	background-color: rgb(239, 239, 239);
+	border-radius: 15px;
+	padding: 10px;
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.card-product {
+	border-radius: 15px;
+	height: 250px;
+	width: 300px;
+	box-shadow: 2px 2px 2px black;
+}
+
+.card-title {
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.card-processor {
+	position: relative;
+	bottom: 25px;
+}
