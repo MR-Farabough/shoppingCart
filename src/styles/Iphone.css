@@ -1,0 +1,22 @@
+.phone-image {
+	width: 100%;
+}
+
+.comparison {
+	display: flex;
+}
+
+.leftside {
+	width: 50%;
+}
+
+.rightside {
+	display: flex;
+	margin: auto;
+	width: 50%;
+	justify-content: center;
+}
+
+.rightside > p {
+	width: 300px;
+}
