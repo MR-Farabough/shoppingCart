@@ -1,0 +1,19 @@
+.watch-image {
+	width: 100%;
+}
+
+.multiWatch {
+	display: flex;
+	justify-content: space-around;
+}
+
+.multiWatch > img {
+	width: 40vw;
+	border-radius: 15px;
+}
+
+.productContainer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
