@@ -5,6 +5,7 @@ import Checkout from './components/Checkout';
 import NotFound from './components/NotFound';
 import appleLogo from './assets/black-apple-logo.png';
 import shoppingCart from './assets/shoppingBag.svg';
+import githubLogo from './assets/githubLogo.png';
 
 const Router = () => {
 	return (
@@ -35,6 +36,19 @@ const Router = () => {
 				<Route path="/checkout" Component={Checkout} />
 				<Route path="*" Component={NotFound} />
 			</Routes>
+			<div className="footer">
+				<p>
+					All Rights Reserved by <a href="https://apple.com">Apple</a>.
+				</p>
+				<p>
+					Fair use of material is subject to the terms and conditions of the
+					Creative Commons license.
+				</p>
+				<div className="githubFooter">
+					<img src={githubLogo} alt="Github Logo" />
+					<a href="https://github.com/michael-lgtm">Michael</a>
+				</div>
+			</div>
 		</>
 	);
 };
