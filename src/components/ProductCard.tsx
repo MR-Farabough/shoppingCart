@@ -16,6 +16,7 @@ const ProductCard = ({ img, title, processor, description, price }: Props) => {
 			<p className="card-processor">{processor}</p>
 			<p className="card-description">{description}</p>
 			<p className="card-price">${price}</p>
+			<button className="buyBTN">Add To Cart</button>
 		</div>
 	);
 };

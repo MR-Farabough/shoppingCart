@@ -11,6 +11,10 @@
 	align-items: center;
 }
 
+.card:hover {
+	border: 2px solid rgb(209, 209, 209);
+}
+
 .card-product {
 	border-radius: 15px;
 	height: 250px;
@@ -26,4 +30,11 @@
 .card-processor {
 	position: relative;
 	bottom: 25px;
+}
+
+.buyBTN {
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: rgb(172, 172, 172);
 }
