@@ -9,8 +9,15 @@ import githubLogo from './assets/githubLogo.png';
 import Mac from './components/Mac';
 import Iphone from './components/Iphone';
 import AppleWatch from './components/AppleWatch';
+import { useState } from 'react';
 
 const Router = () => {
+	let [cart, setCart] = useState([]);
+	let [totalCart, setTotalCart] = useState<any>([]);
+	if (cart.length > 0) {
+		setTotalCart([...totalCart, cart]);
+		setCart([]);
+	}
 	return (
 		<>
 			<div className="main-nav">
@@ -41,19 +48,19 @@ const Router = () => {
 						</Link>
 						<Link to={'/checkout'}>
 							<img src={shoppingCart} alt="shopping cart" />
-							<p className="cart-count">0</p>
+							<p className="cart-count">{totalCart.length}</p>
 						</Link>
 					</div>
 				</div>
 			</div>
 			<Routes>
-				<Route path="/" Component={Home} />
-				<Route path="/shop" Component={Shop} />
-				<Route path="/mac" Component={Mac} />
-				<Route path="/iphone" Component={Iphone} />
-				<Route path="/watch" Component={AppleWatch} />
-				<Route path="/checkout" Component={Checkout} />
-				<Route path="*" Component={NotFound} />
+				<Route path="/" element={<Home />} />
+				<Route path="/shop" element={<Shop />} />
+				<Route path="/mac" element={<Mac setCart={setCart} />} />
+				<Route path="/iphone" element={<Iphone setCart={setCart} />} />
+				<Route path="/watch" element={<AppleWatch setCart={setCart} />} />
+				<Route path="/checkout" element={<Checkout totalItems={totalCart} />} />
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 			<div className="footer">
 				<p>
