@@ -7,7 +7,11 @@ import mbpM1 from '../assets/mbpM1.jpg';
 import studio from '../assets/studio.jpg';
 import mp from '../assets/macPro.jpg';
 
-const Mac = () => {
+interface Props {
+	setCart: Function;
+}
+
+const Mac = ({ setCart }: Props) => {
 	return (
 		<div className="container">
 			<h2 className="heroTitle">Expierence the Power of M2</h2>
@@ -25,6 +29,7 @@ const Mac = () => {
 					description="Sleek and feather-light design, combining stunning visuals, blazing-fast performance, and a battery life that seems to last forever."
 					title="MacBook Air 15''"
 					price={999}
+					addToCart={setCart}
 				/>
 				<ProductCard
 					img={mbpM1}
@@ -32,6 +37,7 @@ const Mac = () => {
 					description="Revolutionize your work and play, new heights of performance and immersion. Stunning Retina display, lightning-fast processors, and mind-blowing graphics. Redefine what it means to be a pro!"
 					title="MacBook Pro 16''"
 					price={1300}
+					addToCart={setCart}
 				/>
 				<ProductCard
 					img={studio}
@@ -39,6 +45,7 @@ const Mac = () => {
 					description="Takes center stage! Sleek and stylish all-in-one computer. Ultimate companion for artists, designers, and visionaries. With its jaw-dropping display, and vibrant colors."
 					title="Mac Studio"
 					price={700}
+					addToCart={setCart}
 				/>
 				<ProductCard
 					img={mp}
@@ -46,6 +53,7 @@ const Mac = () => {
 					description="Engineered for those who demand nothing but the best. Combines raw power, unmatched performance, and limitless possibilities. Say hello to a new era of professional computing!"
 					title="Mac Pro"
 					price={5999}
+					addToCart={setCart}
 				/>
 			</div>
 		</div>

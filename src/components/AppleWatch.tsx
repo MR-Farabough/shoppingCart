@@ -7,7 +7,11 @@ import s8 from '../assets/ws8.jpg';
 import se from '../assets/watchSE.jpg';
 import ultra from '../assets/watchUltra.jpg';
 
-const AppleWatch = () => {
+interface Props {
+	setCart: Function;
+}
+
+const AppleWatch = ({ setCart }: Props) => {
 	return (
 		<div className="container">
 			<img className="watch-image" src={watchGroup} alt="Apple Watch Cluster" />
@@ -34,6 +38,7 @@ const AppleWatch = () => {
 					processor="W3 Chip"
 					description="The epitome of elegance and innovation on your wrist! Sleek design and dazzling display. Stay connected, track your fitness, enhance productivity with cutting-edge features that will leave you breathless."
 					price={399}
+					addToCart={setCart}
 				/>
 				<ProductCard
 					img={se}
@@ -41,6 +46,7 @@ const AppleWatch = () => {
 					processor="S8 Chip"
 					description="Perfect balance of style and affordability! Your ultimate companion for staying active, staying connected. With a stunning Retina display, powerful performance, and a wide range of features, it's a smartwatch that offers incredible value without compromising on quality."
 					price={249}
+					addToCart={setCart}
 				/>
 				<ProductCard
 					img={ultra}
@@ -48,6 +54,7 @@ const AppleWatch = () => {
 					processor="S8 chip"
 					description="The pinnacle of wearable technology! An experience that transcends imagination. Futuristic design, advanced health monitoring capabilities, and an array of groundbreaking features. Get ready to redefine what's possible with the ultimate smartwatch revolution!"
 					price={799}
+					addToCart={setCart}
 				/>
 			</div>
 		</div>

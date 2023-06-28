@@ -9,7 +9,11 @@ import ip14 from '../assets/14.jpg';
 import ip13 from '../assets/13.jpg';
 import se from '../assets/se.jpg';
 
-const Iphone = () => {
+interface Props {
+	setCart: Function;
+}
+
+const Iphone = ({ setCart }: Props) => {
 	return (
 		<div className="container">
 			<p className="heroTitle">Iphone 14 Pro Max</p>
@@ -54,6 +58,7 @@ const Iphone = () => {
 					processor="A16 Bionic chip"
 					description="The ultimate iPhone."
 					price={999}
+					addToCart={setCart}
 				/>
 				<ProductCard
 					img={ip14}
@@ -61,6 +66,7 @@ const Iphone = () => {
 					processor="A16 Bionic chip"
 					description="A total powerhouse."
 					price={799}
+					addToCart={setCart}
 				/>
 				<ProductCard
 					img={ip13}
@@ -68,6 +74,7 @@ const Iphone = () => {
 					processor="A15 Bionic chip"
 					description="As amazing as ever."
 					price={599}
+					addToCart={setCart}
 				/>
 				<ProductCard
 					img={se}
@@ -75,6 +82,7 @@ const Iphone = () => {
 					processor="A13 Bionic chip"
 					description="Serious power. Serious value."
 					price={429}
+					addToCart={setCart}
 				/>
 			</div>
 		</div>
