@@ -18,7 +18,7 @@ const Mac = () => {
 			<img className="mac-images" src={m2Core} alt="m2 Core" />
 			<h2 className="heroTitle">Which Mac is right for you?</h2>
 			<h3 className="subHeroTitle"></h3>
-			<div className="product-images">
+			<div className="productContainer">
 				<ProductCard
 					img={dblMBA}
 					processor="M2 Chip"
