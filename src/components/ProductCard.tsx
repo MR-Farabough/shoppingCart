@@ -6,9 +6,21 @@ interface Props {
 	processor: string;
 	description: string;
 	price: number;
+	addToCart: Function;
 }
 
-const ProductCard = ({ img, title, processor, description, price }: Props) => {
+const ProductCard = ({
+	img,
+	title,
+	processor,
+	description,
+	price,
+	addToCart,
+}: Props) => {
+	const handleClick = () => {
+		addToCart([img, title, processor, description, price]);
+	};
+
 	return (
 		<div className="card">
 			<img className="card-product" src={img} alt="Product Image" />
@@ -16,7 +28,9 @@ const ProductCard = ({ img, title, processor, description, price }: Props) => {
 			<p className="card-processor">{processor}</p>
 			<p className="card-description">{description}</p>
 			<p className="card-price">${price}</p>
-			<button className="buyBTN">Add To Cart</button>
+			<button onClick={handleClick} className="buyBTN">
+				Add To Cart
+			</button>
 		</div>
 	);
 };
