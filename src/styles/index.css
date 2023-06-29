@@ -31,6 +31,7 @@ body {
 	top: 0;
 	background-color: rgb(212, 212, 212);
 	height: 10vh;
+	min-height: 50px;
 }
 
 .navText,
@@ -60,9 +61,11 @@ a {
 
 .navLinks {
 	display: flex;
-	gap: 8%;
 	margin-left: 20px;
 	background-color: none;
+	justify-content: space-around;
+	width: 100%;
+	overflow: auto;
 }
 
 .navBar img {
