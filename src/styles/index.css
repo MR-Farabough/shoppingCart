@@ -60,8 +60,8 @@ a {
 
 .navLinks {
 	display: flex;
-	gap: 10vw;
-	margin-left: 50px;
+	gap: 8%;
+	margin-left: 20px;
 	background-color: none;
 }
 
