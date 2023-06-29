@@ -2,12 +2,16 @@ import AppleWatch from './AppleWatch';
 import Iphone from './Iphone';
 import Mac from './Mac';
 
-const Shop = () => {
+interface Props {
+	setCart: Function;
+}
+
+const Shop = ({ setCart }: Props) => {
 	return (
 		<>
-			<AppleWatch />
-			<Iphone />
-			<Mac />
+			<AppleWatch setCart={setCart} />
+			<Iphone setCart={setCart} />
+			<Mac setCart={setCart} />
 		</>
 	);
 };
