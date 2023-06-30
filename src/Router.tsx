@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 const Router = () => {
 	let [cart, setCart] = useState([]);
-	let [totalCart, setTotalCart] = useState<any>([]);
+	let [totalCart, setTotalCart] = useState<{}[]>([]);
 	if (cart.length > 0) {
 		setTotalCart([...totalCart, cart]);
 		setCart([]);
@@ -59,7 +59,12 @@ const Router = () => {
 				<Route path="/mac" element={<Mac setCart={setCart} />} />
 				<Route path="/iphone" element={<Iphone setCart={setCart} />} />
 				<Route path="/watch" element={<AppleWatch setCart={setCart} />} />
-				<Route path="/checkout" element={<Checkout totalItems={totalCart} />} />
+				<Route
+					path="/checkout"
+					element={
+						<Checkout totalItems={totalCart} updateCart={setTotalCart} />
+					}
+				/>
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 			<div className="footer">
