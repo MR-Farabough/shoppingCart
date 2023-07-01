@@ -5,40 +5,43 @@ interface Props {
 	img: string;
 	title: string;
 	processor: string;
+	description: string;
 	price: number;
-	removeItem: Function;
 	itemToRemove: string[];
-	id: number;
+	totalItems: string[];
+	updateCart: Function;
 }
 
 const CheckoutCard = ({
 	img,
 	title,
 	processor,
+	description,
 	price,
-	removeItem,
-	id,
+	updateCart,
+	totalItems,
 }: Props) => {
 	const [quantity, setQuantity] = useState(1);
 	const [isDeleted, setIsDeleted] = useState(false);
-	const item = id;
+	const obj = [img, title, processor, description, price];
 	const handleMinus = () => {
-		const updatedQuantity = quantity - 1;
-		if (updatedQuantity === 0) {
-			const userInput = prompt('Confirm delete 1');
-			if (userInput === '1') {
+		let found = false;
+		totalItems.forEach((item) => {
+			console.log(item[1], title, found, 'debug');
+			if (item[1] === title && !found) {
+				found = true;
+				const cache = [...totalItems];
+				const index = cache.indexOf(item);
+				cache.splice(index, 1);
+				updateCart(cache);
 				setIsDeleted(true);
-				removeItem(item);
-			} else {
-				setQuantity(1);
 			}
-		} else {
-			setQuantity(updatedQuantity);
-		}
+		});
 	};
-
 	const handlePlus = () => {
 		const updatedQuantity = quantity + 1;
+		const newObj = [...totalItems, obj];
+		updateCart(newObj);
 		setQuantity(updatedQuantity);
 	};
 
@@ -56,7 +59,6 @@ const CheckoutCard = ({
 				<button onClick={handleMinus} className="minus">
 					-
 				</button>
-				<p className="quantity">{quantity}</p>
 				<button onClick={handlePlus} className="plus">
 					+
 				</button>
