@@ -7,29 +7,17 @@ interface Props {
 }
 
 const Checkout = ({ totalItems, updateCart }: Props) => {
-	const removeItem = (itemToRemove: string) => {
-		let isItemRemoved = false;
-		const updatedItems = totalItems.filter((item) => {
-			console.log(itemToRemove);
-			if (item.id === itemToRemove && !isItemRemoved) {
-				isItemRemoved = true;
-				return false;
-			}
-			return true;
-		});
-		updateCart(updatedItems);
-	};
-
 	const productCards = totalItems.map((item, index) => (
 		<CheckoutCard
 			key={index}
 			img={item[0]}
 			title={item[1]}
 			processor={item[2]}
+			description={item[3]}
 			price={parseInt(item[4])}
 			itemToRemove={item}
-			removeItem={removeItem}
-			id={item.id}
+			totalItems={totalItems}
+			updateCart={updateCart}
 		/>
 	));
 
