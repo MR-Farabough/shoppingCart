@@ -9,9 +9,10 @@ import mp from '../assets/macPro.jpg';
 
 interface Props {
 	setCart: Function;
+	currentCart: [];
 }
 
-const Mac = ({ setCart }: Props) => {
+const Mac = ({ setCart, currentCart }: Props) => {
 	return (
 		<div className="container">
 			<h2 className="heroTitle">Expierence the Power of M2</h2>
@@ -30,6 +31,7 @@ const Mac = ({ setCart }: Props) => {
 					title="MacBook Air 15''"
 					price={999}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 				<ProductCard
 					img={mbpM1}
@@ -38,6 +40,7 @@ const Mac = ({ setCart }: Props) => {
 					title="MacBook Pro 16''"
 					price={1300}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 				<ProductCard
 					img={studio}
@@ -46,6 +49,7 @@ const Mac = ({ setCart }: Props) => {
 					title="Mac Studio"
 					price={700}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 				<ProductCard
 					img={mp}
@@ -54,6 +58,7 @@ const Mac = ({ setCart }: Props) => {
 					title="Mac Pro"
 					price={5999}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 			</div>
 		</div>

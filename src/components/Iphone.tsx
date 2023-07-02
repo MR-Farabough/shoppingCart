@@ -11,9 +11,10 @@ import se from '../assets/se.jpg';
 
 interface Props {
 	setCart: Function;
+	currentCart: [];
 }
 
-const Iphone = ({ setCart }: Props) => {
+const Iphone = ({ setCart, currentCart }: Props) => {
 	return (
 		<div className="container">
 			<p className="heroTitle">Iphone 14 Pro Max</p>
@@ -59,6 +60,7 @@ const Iphone = ({ setCart }: Props) => {
 					description="The ultimate iPhone."
 					price={999}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 				<ProductCard
 					img={ip14}
@@ -67,6 +69,7 @@ const Iphone = ({ setCart }: Props) => {
 					description="A total powerhouse."
 					price={799}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 				<ProductCard
 					img={ip13}
@@ -75,6 +78,7 @@ const Iphone = ({ setCart }: Props) => {
 					description="As amazing as ever."
 					price={599}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 				<ProductCard
 					img={se}
@@ -83,6 +87,7 @@ const Iphone = ({ setCart }: Props) => {
 					description="Serious power. Serious value."
 					price={429}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 			</div>
 		</div>

@@ -55,10 +55,22 @@ const Router = () => {
 			</div>
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/shop" element={<Shop setCart={setCart} />} />
-				<Route path="/mac" element={<Mac setCart={setCart} />} />
-				<Route path="/iphone" element={<Iphone setCart={setCart} />} />
-				<Route path="/watch" element={<AppleWatch setCart={setCart} />} />
+				<Route
+					path="/shop"
+					element={<Shop currentCart={totalCart} setCart={setCart} />}
+				/>
+				<Route
+					path="/mac"
+					element={<Mac currentCart={totalCart} setCart={setCart} />}
+				/>
+				<Route
+					path="/iphone"
+					element={<Iphone currentCart={totalCart} setCart={setCart} />}
+				/>
+				<Route
+					path="/watch"
+					element={<AppleWatch currentCart={totalCart} setCart={setCart} />}
+				/>
 				<Route
 					path="/checkout"
 					element={

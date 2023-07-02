@@ -9,9 +9,10 @@ import ultra from '../assets/watchUltra.jpg';
 
 interface Props {
 	setCart: Function;
+	currentCart: [];
 }
 
-const AppleWatch = ({ setCart }: Props) => {
+const AppleWatch = ({ setCart, currentCart }: Props) => {
 	return (
 		<div className="container">
 			<img className="watch-image" src={watchGroup} alt="Apple Watch Cluster" />
@@ -39,6 +40,7 @@ const AppleWatch = ({ setCart }: Props) => {
 					description="The epitome of elegance and innovation on your wrist! Sleek design and dazzling display. Stay connected, track your fitness, enhance productivity with cutting-edge features that will leave you breathless."
 					price={399}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 				<ProductCard
 					img={se}
@@ -47,6 +49,7 @@ const AppleWatch = ({ setCart }: Props) => {
 					description="Perfect balance of style and affordability! Your ultimate companion for staying active, staying connected. With a stunning Retina display, powerful performance, and a wide range of features, it's a smartwatch that offers incredible value without compromising on quality."
 					price={249}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 				<ProductCard
 					img={ultra}
@@ -55,6 +58,7 @@ const AppleWatch = ({ setCart }: Props) => {
 					description="The pinnacle of wearable technology! An experience that transcends imagination. Futuristic design, advanced health monitoring capabilities, and an array of groundbreaking features. Get ready to redefine what's possible with the ultimate smartwatch revolution!"
 					price={799}
 					addToCart={setCart}
+					totalItems={currentCart}
 				/>
 			</div>
 		</div>

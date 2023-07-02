@@ -7,6 +7,7 @@ interface Props {
 	description: string;
 	price: number;
 	addToCart: Function;
+	totalItems: [];
 }
 
 const ProductCard = ({
@@ -16,9 +17,17 @@ const ProductCard = ({
 	description,
 	price,
 	addToCart,
+	totalItems,
 }: Props) => {
+	const obj = [img, title, processor, description, price];
 	const handleClick = () => {
-		addToCart([img, title, processor, description, price]);
+		let found = false;
+		totalItems.forEach((item) => {
+			if (item[1] === title) {
+				found = true;
+			}
+		});
+		!found ? addToCart(obj) : alert('Item already in cart');
 	};
 
 	return (

@@ -16,38 +16,44 @@ const CheckoutCard = ({
 	img,
 	title,
 	processor,
-	description,
 	price,
 	updateCart,
 	totalItems,
 }: Props) => {
 	const [quantity, setQuantity] = useState(1);
-	const [isDeleted, setIsDeleted] = useState(false);
-	const obj = [img, title, processor, description, price];
 	const handleMinus = () => {
 		let found = false;
-		totalItems.forEach((item) => {
-			console.log(item[1], title, found, 'debug');
-			if (item[1] === title && !found) {
-				found = true;
-				const cache = [...totalItems];
-				const index = cache.indexOf(item);
-				cache.splice(index, 1);
-				updateCart(cache);
-				setIsDeleted(true);
-			}
-		});
+		const cache = [...totalItems];
+		if (quantity > 1) {
+			const updatedQuantity = quantity - 1;
+			setQuantity(updatedQuantity);
+			cache.forEach((item) => {
+				if (item === null && !found) {
+					found = true;
+					const index = cache.indexOf(item);
+					cache.splice(index, 1);
+					updateCart(cache);
+				}
+			});
+		} else {
+			totalItems.forEach((item) => {
+				if (item != null && item[1] === title && !found) {
+					found = true;
+					const index = cache.indexOf(item);
+					cache.splice(index, 1);
+					updateCart(cache);
+					const sliced = totalItems.slice(index, totalItems.length);
+					console.log(sliced);
+				}
+			});
+		}
 	};
 	const handlePlus = () => {
 		const updatedQuantity = quantity + 1;
-		const newObj = [...totalItems, obj];
+		const newObj = [...totalItems, null];
 		updateCart(newObj);
 		setQuantity(updatedQuantity);
 	};
-
-	if (isDeleted) {
-		return null;
-	}
 
 	return (
 		<div className="checkout-subcontainer">
@@ -59,6 +65,7 @@ const CheckoutCard = ({
 				<button onClick={handleMinus} className="minus">
 					-
 				</button>
+				<p className="quantity">{quantity}</p>
 				<button onClick={handlePlus} className="plus">
 					+
 				</button>

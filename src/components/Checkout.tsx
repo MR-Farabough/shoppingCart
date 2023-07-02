@@ -7,19 +7,22 @@ interface Props {
 }
 
 const Checkout = ({ totalItems, updateCart }: Props) => {
-	const productCards = totalItems.map((item, index) => (
-		<CheckoutCard
-			key={index}
-			img={item[0]}
-			title={item[1]}
-			processor={item[2]}
-			description={item[3]}
-			price={parseInt(item[4])}
-			itemToRemove={item}
-			totalItems={totalItems}
-			updateCart={updateCart}
-		/>
-	));
+	const productCards = totalItems.map(
+		(item, index) =>
+			item != null && (
+				<CheckoutCard
+					key={index}
+					img={item[0]}
+					title={item[1]}
+					processor={item[2]}
+					description={item[3]}
+					price={parseInt(item[4])}
+					itemToRemove={item}
+					totalItems={totalItems}
+					updateCart={updateCart}
+				/>
+			)
+	);
 
 	const noItems = <img src={emptyCartImg} alt="empty-cart" />;
 

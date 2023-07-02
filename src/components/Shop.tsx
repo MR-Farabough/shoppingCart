@@ -4,14 +4,15 @@ import Mac from './Mac';
 
 interface Props {
 	setCart: Function;
+	currentCart: [];
 }
 
-const Shop = ({ setCart }: Props) => {
+const Shop = ({ setCart, currentCart }: Props) => {
 	return (
 		<>
-			<AppleWatch setCart={setCart} />
-			<Iphone setCart={setCart} />
-			<Mac setCart={setCart} />
+			<AppleWatch currentCart={currentCart} setCart={setCart} />
+			<Iphone currentCart={currentCart} setCart={setCart} />
+			<Mac currentCart={currentCart} setCart={setCart} />
 		</>
 	);
 };
