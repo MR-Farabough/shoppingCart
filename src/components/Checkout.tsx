@@ -15,9 +15,7 @@ const Checkout = ({ totalItems, updateCart }: Props) => {
 					img={item[0]}
 					title={item[1]}
 					processor={item[2]}
-					description={item[3]}
 					price={parseInt(item[4])}
-					itemToRemove={item}
 					totalItems={totalItems}
 					updateCart={updateCart}
 				/>

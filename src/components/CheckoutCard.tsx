@@ -5,9 +5,7 @@ interface Props {
 	img: string;
 	title: string;
 	processor: string;
-	description: string;
 	price: number;
-	itemToRemove: string[];
 	totalItems: string[];
 	updateCart: Function;
 }
@@ -42,8 +40,6 @@ const CheckoutCard = ({
 					const index = cache.indexOf(item);
 					cache.splice(index, 1);
 					updateCart(cache);
-					const sliced = totalItems.slice(index, totalItems.length);
-					console.log(sliced);
 				}
 			});
 		}
