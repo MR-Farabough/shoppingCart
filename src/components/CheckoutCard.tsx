@@ -56,7 +56,7 @@ const CheckoutCard = ({
 			<img className="checkout-product-image" src={img} alt="Product Image" />
 			<h3 className="checkout-title">{title}</h3>
 			<p className="checkout-processor">{processor}</p>
-			<p className="checkout-price">${price}</p>
+			<p className="checkout-price">${price * quantity}</p>
 			<div className="handleQuantity">
 				<button onClick={handleMinus} className="minus">
 					-
