@@ -11,7 +11,7 @@ import se from '../assets/se.jpg';
 
 interface Props {
 	setCart: Function;
-	currentCart: [];
+	currentCart: [] | any;
 }
 
 const Iphone = ({ setCart, currentCart }: Props) => {

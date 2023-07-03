@@ -9,7 +9,7 @@ import mp from '../assets/macPro.jpg';
 
 interface Props {
 	setCart: Function;
-	currentCart: [];
+	currentCart: [] | any;
 }
 
 const Mac = ({ setCart, currentCart }: Props) => {

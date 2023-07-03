@@ -9,7 +9,7 @@ import ultra from '../assets/watchUltra.jpg';
 
 interface Props {
 	setCart: Function;
-	currentCart: [];
+	currentCart: [] | any;
 }
 
 const AppleWatch = ({ setCart, currentCart }: Props) => {
