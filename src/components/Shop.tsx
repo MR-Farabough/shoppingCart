@@ -4,7 +4,7 @@ import Mac from './Mac';
 
 interface Props {
 	setCart: Function;
-	currentCart: [];
+	currentCart: [] | any;
 }
 
 const Shop = ({ setCart, currentCart }: Props) => {
