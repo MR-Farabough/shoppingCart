@@ -38,3 +38,12 @@
 	border-radius: 10px;
 	background-color: rgb(172, 172, 172);
 }
+
+.modal {
+	position: fixed;
+	right: 5px;
+	top: 100px;
+	padding: 15px;
+	background-color: pink;
+	border-radius: 15px;
+}

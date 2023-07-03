@@ -20,6 +20,18 @@ const ProductCard = ({
 	totalItems,
 }: Props) => {
 	const obj = [img, title, processor, description, price];
+	const modal = () => {
+		const newModal = document.createElement('div');
+		newModal.classList.add('modal');
+		newModal.innerHTML = `
+		Item already in cart.
+		Adjust quantity in cart.
+		`;
+		document.body.appendChild(newModal);
+		setTimeout(() => {
+			newModal.remove();
+		}, 3000);
+	};
 	const handleClick = () => {
 		let found = false;
 		totalItems.forEach((item) => {
@@ -27,7 +39,7 @@ const ProductCard = ({
 				found = true;
 			}
 		});
-		!found ? addToCart(obj) : alert('Item already in cart');
+		!found ? addToCart(obj) : modal();
 	};
 
 	return (
