@@ -8,10 +8,10 @@ interface Props {
 
 const Checkout = ({ totalItems, updateCart }: Props) => {
 	const productCards = totalItems.map(
-		(item, index) =>
+		(item) =>
 			item != null && (
 				<CheckoutCard
-					key={index}
+					key={item[1]}
 					img={item[0]}
 					title={item[1]}
 					processor={item[2]}
