@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'https://michael-lgtm.github.io/shoppingCart/',
+  base: 'https://michael-lgtm.github.io/shoppingCart//',
   plugins: [react()],
 })
