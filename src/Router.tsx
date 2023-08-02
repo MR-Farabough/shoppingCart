@@ -9,7 +9,7 @@ import githubLogo from './assets/githubLogo.png';
 import Mac from './components/Mac';
 import Iphone from './components/Iphone';
 import AppleWatch from './components/AppleWatch';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Router = () => {
 	let [cart, setCart] = useState([]);
@@ -19,6 +19,9 @@ const Router = () => {
 		setTotalCart([...totalCart, cart]);
 		setCart([]);
 	}
+	useEffect(() => {
+		resizeNav();
+	}, []);
 	const resizeNav = () => {
 		if (window.innerWidth < 650) {
 			setMobileNav(true);
